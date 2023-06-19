@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    # before_action :set_bookmark, only: :destroy
+    before_action :set_bookmark, only: :destroy
     before_action :set_pigeon, only:  [:create, :show]
 
     def index
@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
         else
           render :new
         end    
+    end
+
+    def destroy
+      @booking.destroy
+      redirect_to pigeons_path(@booking.pigeon), status: :see_other
     end
 
     private
