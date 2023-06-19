@@ -1,0 +1,2 @@
+class PigeonsController < ApplicationController
+end
