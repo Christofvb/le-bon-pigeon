@@ -1,1 +1,11 @@
 <h1>Tout nos jolies pigeons</h1>
+
+<% @pigeons.each do |pigeon| %>
+  <ul> 
+    <li>Nom :<%= pigeon.name %> ,
+    couleur : <%= pigeon.color %> ,
+    description : <%= pigeon.descriptif %>. 
+    <%= pigeon.rating %> ⭐️ |
+    <%= pigeon.price %> €</li>
+  </ul>
+<% end %>

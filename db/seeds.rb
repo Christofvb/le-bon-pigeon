@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "faker"
+
+10.times do 
+    Pigeon.create(
+        name: Faker::Creature::Bird.common_family_name,
+        color: Faker::Creature::Bird.color,
+        descriptif: Faker::Creature::Bird.order,
+        rating: (0..5).to_a.sample,
+        price: (100..10000).to_a.sample
+      )
+end
