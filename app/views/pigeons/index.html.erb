@@ -1,10 +1,11 @@
 <h1>Tout nos jolies pigeons</h1>
 
 <% @pigeons.each do |pigeon| %>
-  <ul> 
-    <li>Nom :<%= pigeon.name %> ,
+  <ul>
+    <li>Nom :<%= pigeon.name %>
+    <img src="<%= pigeon.image_url %>" alt="Pigeon">,
     couleur : <%= pigeon.color %> ,
-    description : <%= pigeon.descriptif %>. 
+    description : <%= pigeon.descriptif %>.
     <%= pigeon.rating %> ⭐️ |
     <%= pigeon.price %> €</li>
   </ul>

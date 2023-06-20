@@ -6,5 +6,5 @@ class PigeonsController < ApplicationController
     def show
       @pigeon = Pigeon.find(params[:id])
     end
-    
+
 end
