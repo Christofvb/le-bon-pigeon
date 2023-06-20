@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+body {
+  background-color: #EEE3CB;
+}
+.owner-image {
+height: 350px;
+width:150px;
+box-shadow:1px 1px 5px #EEE3CB ;
+
+
+}
+
+.text {
+align-items: center; /* Alignement horizontal au centre */
+margin-left: 5px;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+h3 {
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 200;
+}
+.card {
+  border-radius: 5px;
+  display:flex;
+  align-items: center;
+  flex-direction: row;
+  padding:8px;
+  margin: 15px;
+  justify-content: flex-start;
+  background-color: #9BABB8;
+  border: 1px solid #EEE3CB ;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 5px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
+  grid-gap: 10px; /* Espacement entre les éléments de la grille */
+}
+
+.item {
+background-color: #9BABB8;
+border: 1px solid #EEE3CB;
+}
