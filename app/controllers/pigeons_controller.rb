@@ -5,6 +5,7 @@ class PigeonsController < ApplicationController
 
     def show
       @pigeon = Pigeon.find(params[:id])
+      @booking = Booking.new
     end
 
 end
