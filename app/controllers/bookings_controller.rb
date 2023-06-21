@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.pigeon = @pigeon
     if @booking.save
-      redirect_to bookings_path(@pigeon)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -30,10 +30,9 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:date_start, :date_end, :user_id)
   end
 
-  # pour destroy
-  # def set_booking
-  #   @booking = Booking.find(params[:id])
-  # end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def set_pigeon
     @pigeon = Pigeon.find(params[:pigeon_id])

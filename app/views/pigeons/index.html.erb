@@ -31,7 +31,7 @@
           Description: <%= pigeon.descriptif %><br />
           Prix: <%= pigeon.price %> €
         </p>
-        <button class="btn">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
+        <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
       </div>
     </div>
   <% end %>
