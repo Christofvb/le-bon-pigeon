@@ -1,23 +1,18 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-                <% if @booking.nil? %>
-                    <h1><%= current_user.first_name %></h1>
-                    <p>Vous avez aucune reservation !</p>
-                    <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link"%>
-                <% else %>
-                    <h1>Vos réservations</h1>
-                    <hr>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<%= @pigeon.image_url %>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>   
-                <% end %>
+    <div class="card-info">
+        <% if @booking.nil? %>
+            <h1><%= current_user.first_name %></h1>
+            <p>Vous avez aucune reservation !</p>
+            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link"%>
+        <% else %>
+            <h1>Vos réservations</h1>
+            <hr>
+            <img src="<%= @pigeon.image_url %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>
+        <% end %>   
     </div>
 </div>
