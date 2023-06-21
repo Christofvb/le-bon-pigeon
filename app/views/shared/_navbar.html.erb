@@ -1,0 +1,40 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+        <%= link_to "#", class: "navbar-brand" do %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2018/07/29/18/54/pigeon-3570784_1280.png" %>
+        <% end %>
+        <h3 style="font-weight: bold;">Le Bon Pigeon</h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+            <ul class="navbar-nav me-auto">
+                <% if user_signed_in? %>
+                <li class="nav-item active">
+                <%= link_to "Acceuil", "/", class: "nav-link mt-1" %>
+                </li>
+                <li class="nav-item">
+                    <%#= link_to "Panier", "#", class: "nav-link" %>
+                </li>
+                <li class="nav-item dropdown">
+                    <%= image_tag "https://avatars.githubusercontent.com/u/131164351?v=4", class: "avatar dropdown-toggle mt-1", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "Modifier profil", "/users/edit", class: "dropdown-item" %>
+                    <%= link_to "Vos réservations", bookings_path, class: "dropdown-item" %>
+                    <%= link_to "Log out", "/users/sign_out", class: "dropdown-item", data: {turbo_method: :delete} %>
+                    </div>
+                </li>
+                <% else %>
+                <li class="nav-item">
+                    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
