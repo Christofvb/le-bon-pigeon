@@ -1,2 +1,128 @@
 // Import page-specific CSS files here.
 @import "home";
+
+$primary-color: #fff;
+$border-radius: 5px;
+$black-color: #010004;
+$hover-color: #3A8EA9;
+$transition-duration: 0,5s;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EEE3CB;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  background-color: $primary-color;
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 600px;
+  border-radius: $border-radius;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+  transition: box-shadow $transition-duration ease;
+
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background-color: #EEE3CB;
+    color: $black-color;
+    padding: 22px 45px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: $border-radius;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+    transition: background-color $transition-duration ease;
+
+    i {
+      margin-left: 20px;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 15px 25px $hover-color;
+
+    .btn {
+      color: $primary-color;
+      background-color: $hover-color;
+      transition: color $primary-color  $transition-duration ease
+    }
+  }
+}
+
+.container__text {
+  padding: 40px 40px 0;
+
+  h1 {
+    color: $black-color;
+    font-weight: 400;
+
+  }
+
+  .container__text__star span {
+    font-size: 0.8rem;
+    color: #EEE3CB;
+    margin: -5px 0 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .container__text__timing {
+    display: flex;
+    margin: 20px 0 10px;
+
+    .container__text__timing_time {
+      margin-right: 40px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #818189;
+    }
+
+    p {
+      color: $black-color;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.affichage {
+  margin-top: 30px;
+  display: grid;
+  grid-gap: 30px;
+}

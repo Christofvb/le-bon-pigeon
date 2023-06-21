@@ -1,12 +1,40 @@
-<h1>Tout nos jolies pigeons</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tous nos jolis pigeons</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <h1>Tous nos jolis pigeons</h1>
 
-<% @pigeons.each do |pigeon| %>
-  <ul>
-    <li>Nom :<%= pigeon.name %>
-    <img src="<%= pigeon.image_url %>" alt="Pigeon">,
-    couleur : <%= pigeon.color %> ,
-    description : <%= pigeon.descriptif %>.
-    <%= pigeon.rating %> ⭐️ |
-    <%= pigeon.price %> €</li>
-  </ul>
-<% end %>
+  <% @pigeons.each do |pigeon| %>
+  <div class="affichage">
+    <div class="container">
+      <img src="<%= pigeon.image_url %>" alt="Pigeon" />
+      <div class="container__text">
+        <h1><%= pigeon.name %></h1>
+        <div class="container__text__star">
+          <% pigeon.rating.times do %>
+            <span class="fa fa-star checked"></span>
+          <% end %>
+        </div>
+        <p>
+          Couleur: <%= pigeon.color %><br />
+          Description: <%= pigeon.descriptif %><br />
+          Prix: <%= pigeon.price %> €
+        </p>
+        <button class="btn">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
+      </div>
+    </div>
+  <% end %>
+</div>
+</body>
+</html>
