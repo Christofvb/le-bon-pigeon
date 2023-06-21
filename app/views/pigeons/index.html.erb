@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tous nos jolis pigeons</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-    crossorigin="anonymous"
-  />
-</head>
-<body>
+<div class='bp-index-container'>
   <h1>Tous nos jolis pigeons</h1>
 
   <% @pigeons.each do |pigeon| %>
   <div class="affichage">
-    <div class="container">
+    <div class="bp-container-grid">
       <img src="<%= pigeon.image_url %>" alt="Pigeon" />
       <div class="container__text">
         <h1><%= pigeon.name %></h1>
@@ -36,5 +22,4 @@
     </div>
   <% end %>
 </div>
-</body>
-</html>
+
