@@ -33,6 +33,12 @@
             </p>
             <button class="bouton-vue">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
         </div>
+        <p>
+          Couleur: <%= pigeon.color %><br />
+          Description: <%= pigeon.descriptif %><br />
+          Prix: <%= pigeon.price %> €
+        </p>
+        <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
       </div>
     <% end %>
   </div>
