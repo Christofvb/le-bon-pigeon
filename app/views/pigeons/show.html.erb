@@ -2,25 +2,24 @@
 <div class="row">
   <div class="bp-index-container">
     <h1>Votre pigeon coup de coeur</h1>
-    <div class="justify-content-center">
-      <%= render @pigeon %>
+    <div class="affichage mb-5">
+      <div class="bp-container-grid">
+        <%= render @pigeon %>
 
-      <div>
-        <%= form_with(model: [@pigeon, @booking], local: true) do |form| %>
-          <div class="field">
-            <%= form.label :date_start %>
-            <%= form.date_field :date_start, class: "datepicker" %>
-          </div>
+        <div>
+          <%= simple_form_for([@pigeon, @booking], url: pigeon_bookings_path(@pigeon), method: :post) do |f| %>
+            <div class="form-inputs">
 
-          <div class="field">
-            <%= form.label :date_end %>
-            <%= form.date_field :date_end, class: "datepicker mt-1" %>
-          </div>
-
-          <div class="actions">
-            <%= form.submit "Réserver", class: "btn btn-primary mt-2 mb-2 pl-2" %>
-          </div>
-        <% end %>
+              <%= f.label :date_start %>
+              <%= f.date_field :date_start %>
+              <%= f.label :date_end %>
+              <%= f.date_field :date_end %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

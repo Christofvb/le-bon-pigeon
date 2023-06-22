@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_bookmark, only: :destroy
+  before_action :set_booking, only: :destroy
   before_action :set_pigeon, only: %i[create show]
 
   def index
@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.pigeon = @pigeon
+    @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
     else
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date_start, :date_end, :user_id)
+    params.require(:booking).permit(:date_start, :date_end)
   end
 
   def set_booking

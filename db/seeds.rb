@@ -27,7 +27,7 @@ puts "Database cleaned"
     name: Faker::Creature::Bird.common_family_name,
     color: Faker::Creature::Bird.color,
     descriptif: Faker::Creature::Bird.order,
-    rating: (0..5).to_a.sample,
+    rating: (1..5).to_a.sample,
     price: (100..10000).to_a.sample,
     image_url: PixabayService.random_pigeon_image
   )
