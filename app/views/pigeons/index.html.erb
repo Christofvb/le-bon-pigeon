@@ -1,25 +1,69 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tous nos jolis pigeons</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Tous nos jolis pigeons</h1>
+
+    <% @pigeons.each do |pigeon| %>
+      <div class="affichage">
+        <div class="boite-vue">
+          <img src="<%= pigeon.image_url %>" alt="Pigeon" class="pigeon-vue" />
+          <div class="container__text">
+            <h1><%= pigeon.name %></h1>
+            <div class="container__text__star">
+              <% pigeon.rating.times do %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+            </div>
+            <p>
+              Couleur: <%= pigeon.color %><br />
+              Description: <%= pigeon.descriptif %><br />
+              Prix: <%= pigeon.price %> €
+            </p>
+            <button class="bouton-vue">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
+=======
 <div class='bp-index-container'>
   <h1>Tous nos jolis pigeons</h1>
 
   <% @pigeons.each do |pigeon| %>
-  <div class="affichage">
-    <div class="bp-container-grid">
-      <img src="<%= pigeon.image_url %>" alt="Pigeon" />
-      <div class="container__text">
-        <h1><%= pigeon.name %></h1>
-        <div class="container__text__star">
-          <% pigeon.rating.times do %>
-            <span class="fa fa-star checked"></span>
-          <% end %>
+    <div class="affichage mb-5">
+      <div class="bp-container-grid">
+        <img src="<%= pigeon.image_url %>" alt="Pigeon" />
+        <div class="container__text">
+          <h1><%= pigeon.name %></h1>
+          <div class="container__text__star">
+            <% pigeon.rating.times do %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+          </div>
+          <p>
+            Couleur: <%= pigeon.color %><br />
+            Description: <%= pigeon.descriptif %><br />
+            Prix: <%= pigeon.price %> € / jour
+          </p>
+          <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
+>>>>>>> master
         </div>
-        <p>
-          Couleur: <%= pigeon.color %><br />
-          Description: <%= pigeon.descriptif %><br />
-          Prix: <%= pigeon.price %> €
-        </p>
-        <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
       </div>
+<<<<<<< HEAD
+    <% end %>
+  </div>
+  </body>
+</html>
+=======
     </div>
   <% end %>
 </div>
-
+>>>>>>> master

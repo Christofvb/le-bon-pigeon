@@ -1,0 +1,23 @@
+
+<div id="<%= dom_id pigeon %>">
+  <h2>
+    <%= pigeon.name %>
+  </h2> 
+  <img src="<%= @pigeon.image_url %>" alt="Pigeon" />
+  <p>
+    <strong>Description:</strong>
+    <%= pigeon.descriptif %>
+  </p>
+  <p>
+    <strong>Rating:</strong>
+    <%= pigeon.rating %> ⭐️
+  </p>
+  <p>
+    <strong>Color:</strong>
+    <%= pigeon.color %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= pigeon.price %> €
+  </p>
+</div>
