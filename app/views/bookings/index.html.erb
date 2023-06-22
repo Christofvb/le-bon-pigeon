@@ -1,18 +1,28 @@
 <div class="container">
     <div class="card-info">
-        <% if @booking.nil? %>
-            <h1><%= current_user.first_name %></h1>
-            <p>Vous avez aucune reservation !</p>
-            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link"%>
-        <% else %>
-            <h1>Vos réservations</h1>
-            <hr>
-            <img src="<%= @pigeon.image_url %>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h1>Vos réservations</h1>
+        <hr>
+        <% @bookings.each do |booking| %>
+            <div class="affichage mb-5">
+                <div class="container__text">
+                <h1><%= booking.user.first_name %></h1>
+                <h2><%= booking.pigeon.name %></h2>
+                
+                <div class="container__text__star">
+                    <p><%= booking.date_start%></p>
+                </div>
+                <div class="container__text__star">
+                    <p><%= booking.date_end%></p>
+                </div>
+                <%= button_to "Destroy this booking", @booking, method: :delete %>
+                </div>
             </div>
-        <% end %>   
+            <hr>
+        <% end %>
+        <div>
+            <%= link_to "Back to pigeons", pigeons_path %>
+
+        </div>
+
     </div>
 </div>
