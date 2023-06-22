@@ -38,11 +38,11 @@ color: white;
   border-radius: 5px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-  grid-gap: 10px; /* Espacement entre les éléments de la grille */
-}
+// .container {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
+//   grid-gap: 10px; /* Espacement entre les éléments de la grille */
+// }
 
 .item {
 background-color: #9BABB8;
@@ -78,6 +78,7 @@ border: 1px solid #EEE3CB;
   transform: matrix(1, 0, 0, 1, 0, 0); color: white;
 }
 
+<<<<<<< HEAD
 // CARD VUE PIGEONS 
 $primary-color: #fff;
 $border-radius: 5px;
@@ -207,3 +208,38 @@ $transition-duration: 0,5s;
   width: 250px;
   height: 400px;
 }
+=======
+// FOOTER
+footer{
+  background-color: #333;
+  padding: 20px 0 30px;
+}
+footer span{
+  color: #25546f;
+  font-size: 25px;
+  line-height: 35px;
+  // padding: 0 30px;
+}
+footer span:hover{
+  font-size: 33px;
+}
+footer h5{
+  color: white;
+  font-weight: normal;
+}
+
+// BOUTON
+
+.bouton-destroy {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #c32121;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: matrix(1, 0, 0, 1, 0, 0); color: white;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+>>>>>>> master
