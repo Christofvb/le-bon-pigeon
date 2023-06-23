@@ -81,7 +81,7 @@ border: 1px solid #EEE3CB;
 // FOOTER
 footer{
   background-color: #333;
-  padding: 20px 0 30px;
+  padding: 40px 0 80px;
 }
 footer span{
   color: #25546f;
@@ -91,6 +91,7 @@ footer span{
 }
 footer span:hover{
   font-size: 33px;
+  color: #EEE3CB;
 }
 footer h5{
   color: white;
@@ -111,3 +112,23 @@ footer h5{
   align-items: center;
 }
 
+.scroll-top {
+  height: 80px;
+  width: 80px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 40px;
+  bottom: 95px;
+  border: 1px solid #EEE3CB;
+}
+
+.scroll-top span {
+  font-size: 50px;
+}
+.scroll-top span:hover {
+  font-size: 60px;
+}
