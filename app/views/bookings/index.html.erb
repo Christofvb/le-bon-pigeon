@@ -1,4 +1,4 @@
-<div class="container">
+<div class="bp-index-container">
     <div class="card-info">
         <h1>Vos réservations</h1>
         <hr>
@@ -8,21 +8,37 @@
             <h4>Vous avez aucune réservation pour le moment</h4>
             <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link mt-4", style: "width: 250px;"%>
         <% else %>
-            <% @bookings.each do |booking| %>
-                <div class="affichage mb-5">
-                    <div class="container__text">
-                        <h1><%= booking.user.first_name %></h1>
-                        <h2><%= booking.pigeon.name %></h2>
-                
-                        <p><%= booking.date_start%></p>
-                        <p><%= booking.date_end%></p>
-                        <%= button_to "Supprimer la réservation", booking_path(booking), method: :delete %>
-                    </div>
+        <% @bookings.each do |booking| %>
+            <div class="affichage mb-5">
+          <div class="bp-container-grid">
+            <img src="<%= booking.pigeon.image_url %>" alt="Pigeon" />
+                <div class="container__text">
+                <h1><%= booking.user.first_name %></h1>
+                <h2><%= booking.pigeon.name %></h2>
+
+                <div class="container__text__star">
+                    <p><%= booking.date_start%></p>
                 </div>
-                <hr>
-            <% end %>
-            <%= link_to "Retourner voir les pigeons", pigeons_path, class: "btn btn-light mb-2 mt-2" %>
-        <% end %>
+                <div class="container__text__star">
+                    <p><%= booking.date_end%></p>
+                </div>
+                <div class="container__text__star">
+                    <p><%= booking.pigeon.price%>€</p>
+                </div>
+                  <%= link_to "Destroy this reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn"%>
+
+                </div>
+                </div>
+            </div>
+
+              <% end %>
+             <button><%= link_to "Retourner voir les pigeons", pigeons_path,  class: "btn"%></button>
+             <% end %>
+
+
+</div>
+
+
 
     </div>
 </div>
