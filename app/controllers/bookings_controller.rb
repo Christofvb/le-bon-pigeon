@@ -22,17 +22,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-<<<<<<< HEAD
-    flash[:notice] = "La réservation a été supprimée avec succès."
-    redirect_to bookings_path
-=======
 
     redirect_to bookings_path, status: :see_other
 
     flash[:notice] = "La réservation a été supprimée avec succès."
     redirect_to bookings_path
 
->>>>>>> 40c39e440d030fbb22e18efc7911224638c6cc2d
   end
 
   private
