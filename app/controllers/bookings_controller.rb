@@ -27,7 +27,6 @@ class BookingsController < ApplicationController
 
     flash[:notice] = "La réservation a été supprimée avec succès."
     redirect_to bookings_path
-
   end
 
   private
