@@ -1,30 +1,31 @@
 <div class="container">
-<div class="row">
-  <div class="bp-index-container">
-    <h1>Votre pigeon coup de coeur</h1>
-    <div class="affichage mb-5">
-      <div class="bp-container-grid">
-        <%= render @pigeon %>
-
-        <div>
-          <%= simple_form_for([@pigeon, @booking], url: pigeon_bookings_path(@pigeon), method: :post) do |f| %>
-            <div class="form-inputs">
-
-              <%= f.label :date_start %>
-              <%= f.date_field :date_start %>
-              <%= f.label :date_end %>
-              <%= f.date_field :date_end %>
-            </div>
-            <div class="form-actions">
-              <%= f.button :submit %>
-            </div>
-          <% end %>
+  <div class="row">
+    <div class="bp-index-container">
+      <h1>Votre pigeon coup de coeur</h1>
+      <div class="affichage mb-5">
+        <div class="bp-container-grid">
+          <img src="<%= @pigeon.image_url %>" alt="pigeon"/>
+          <div class="container__text">
+            <%= simple_form_for([@pigeon, @booking], url: pigeon_bookings_path(@pigeon), method: :post) do |f| %>
+              <div class="form-inputs">
+              
+                <%= f.label :date_start %>
+                <%= f.date_field :date_start %>
+                <%= f.label :date_end %>
+                <%= f.date_field :date_end %>
+                <%= f.input :content %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
       
     
   </div>
-    <%= link_to "Retourner voir les pigeons", pigeons_path, class: "btn btn-light mb-2 mt-2" %>
+  <%= link_to "Retourner voir les pigeons", pigeons_path, class: "btn btn-light mb-2 mt-2" %>
+
 </div>

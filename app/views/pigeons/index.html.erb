@@ -1,37 +1,39 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: pigeons_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control border border-black border-end-0 shadow-lg",
-            placeholder: "Nom du pigeon"
-        %>
-      <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
-    <% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: pigeons_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control border border-black border-end-0 shadow-lg",
+              placeholder: "Nom du pigeon"
+          %>
+        <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
+      <% end %>
+    </div>
   </div>
-</div>
-<div class='bp-index-container'>
-  <h1>Tous nos jolis pigeons</h1>
+  <div class='bp-index-container'>
+    <h1>Tous nos jolis pigeons</h1>
 
-  <% @pigeons.each do |pigeon| %>
-    <div class="affichage mb-5">
-      <div class="bp-container-grid">
-        <img src="<%= pigeon.image_url %>" alt="Pigeon" />
-        <div class="container__text">
-          <h1><%= pigeon.name %></h1>
-          <div class="container__text__star">
-            <% pigeon.rating.times do %>
-              <span class="fa fa-star checked"></span>
-            <% end %>
+    <% @pigeons.each do |pigeon| %>
+      <div class="affichage mb-5">
+        <div class="bp-container-grid">
+          <img src="<%= pigeon.image_url %>" alt="Pigeon" />
+          <div class="container__text">
+            <h1><%= pigeon.name %></h1>
+            <div class="container__text__star">
+              <% pigeon.rating.times do %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+            </div>
+            <p>
+              Couleur: <%= pigeon.color %><br />
+              Description: <%= pigeon.descriptif %><br />
+              Prix: <%= pigeon.price %> € / jour
+            </p>
+            <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
           </div>
-          <p>
-            Couleur: <%= pigeon.color %><br />
-            Description: <%= pigeon.descriptif %><br />
-            Prix: <%= pigeon.price %> € / jour
-          </p>
-          <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
