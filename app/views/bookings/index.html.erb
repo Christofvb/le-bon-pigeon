@@ -6,39 +6,35 @@
         <% if @bookings.empty? %>
             <h2>Aie..</h2>
             <h4>Vous avez aucune réservation pour le moment</h4>
-            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link mt-4", style: "width: 250px;"%>
+            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "btn btn-light mt-4", style: "width: 250px;"%>
         <% else %>
-        <% @bookings.each do |booking| %>
-            <div class="affichage mb-5">
-          <div class="bp-container-grid">
-            <img src="<%= booking.pigeon.image_url %>" alt="Pigeon" />
-                <div class="container__text">
-                <h1><%= booking.user.first_name %></h1>
-                <h2><%= booking.pigeon.name %></h2>
+            <% @bookings.each do |booking| %>
+                <div class="affichage mb-5">
+                    <div class="bp-container-grid">
+                        <img src="<%= booking.pigeon.image_url %>" alt="Pigeon" />
+                        <div class="container__text">
+                            <h2><%= booking.user.first_name %></h2>
+                            <h3><%= booking.pigeon.name %></h3>
+                            <div class="container__text__star">
+                            <p>Votre message envoyé : <%= booking.content%></p>
+                            </div>
 
-                <div class="container__text__star">
-                    <p><%= booking.date_start%></p>
+                            <div class="container__text__star">
+                                <p><%= booking.date_start%> / <%= booking.date_end%></p>
+
+                            </div>
+                            <div class="container__text__star">
+                                <p><strong><%= booking.pigeon.price%>€</strong></p>
+                            </div>
+                        
+                            <%= link_to "Supprimer la reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: "btn"%>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="container__text__star">
-                    <p><%= booking.date_end%></p>
-                </div>
-                <div class="container__text__star">
-                    <p><%= booking.pigeon.price%>€</p>
-                </div>
-                  <%= link_to "Destroy this reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn"%>
 
-                </div>
-                </div>
-            </div>
-
-              <% end %>
-             <button><%= link_to "Retourner voir les pigeons", pigeons_path,  class: "btn"%></button>
-             <% end %>
-
-
-</div>
-
-
-
+            <% end %>
+            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link mt-4", style: "width: 250px; background-color: #EEE3CB;"%>
+        <% end %>
     </div>
 </div>
