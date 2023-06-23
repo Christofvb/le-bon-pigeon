@@ -13,29 +13,28 @@
                     <div class="bp-container-grid">
                         <img src="<%= booking.pigeon.image_url %>" alt="Pigeon" />
                         <div class="container__text">
-                            <h1><%= booking.user.first_name %></h1>
-                            <h2><%= booking.pigeon.name %></h2>
+                            <h2><%= booking.user.first_name %></h2>
+                            <h3><%= booking.pigeon.name %></h3>
+                            <div class="container__text__star">
+                            <p>Votre message envoyé : <%= booking.content%></p>
+                            </div>
 
                             <div class="container__text__star">
-                                <p><%= booking.date_start%></p>
+                                <p><%= booking.date_start%> / <%= booking.date_end%></p>
 
                             </div>
                             <div class="container__text__star">
-                                <p><%= booking.date_end%></p>
+                                <p><strong><%= booking.pigeon.price%>€</strong></p>
                             </div>
-                            <div class="container__text__star">
-                                <p><%= booking.pigeon.price%>€</p>
-                            </div>
-                                <div class="container__text__star">
-                                <p>Votre message envoyé : <%= booking.content%></p>
-                            </div>
-                            <%= link_to "Supprimer la reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn"%>
+                        
+                            <%= link_to "Supprimer la reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: "btn"%>
 
                         </div>
                     </div>
                 </div>
 
             <% end %>
+            <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link mt-4", style: "width: 250px; background-color: #EEE3CB;"%>
         <% end %>
     </div>
 </div>

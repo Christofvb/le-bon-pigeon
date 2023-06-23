@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
 
-    redirect_to bookings_path, status: :see_other
 
     flash[:notice] = "La réservation a été supprimée avec succès."
     redirect_to bookings_path
