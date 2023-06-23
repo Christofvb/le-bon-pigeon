@@ -1,28 +1,32 @@
-<div class="container">
+<div class="bp-index-container">
     <div class="card-info">
         <h1>Vos réservations</h1>
         <hr>
         <% @bookings.each do |booking| %>
             <div class="affichage mb-5">
+          <div class="bp-container-grid">
+            <img src="<%= booking.pigeon.image_url %>" alt="Pigeon" />
                 <div class="container__text">
                 <h1><%= booking.user.first_name %></h1>
                 <h2><%= booking.pigeon.name %></h2>
-                
+
                 <div class="container__text__star">
                     <p><%= booking.date_start%></p>
                 </div>
                 <div class="container__text__star">
                     <p><%= booking.date_end%></p>
                 </div>
-                <%= button_to "Destroy this booking", @booking, method: :delete %>
+                  <%= link_to "Destroy this reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn"%>
+
+                </div>
                 </div>
             </div>
             <hr>
-        <% end %>
-        <div>
-            <%= link_to "Back to pigeons", pigeons_path %>
 
+             <% end %>
+              <div>
+<button class="btn" onclick="window.location.href='<%= pigeons_path %>'">Back to pigeons <i class="fa fa-arrow-right"></i></button>
         </div>
-
+</div>
     </div>
 </div>

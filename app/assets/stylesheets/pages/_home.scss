@@ -15,6 +15,7 @@ box-shadow:1px 1px 5px #EEE3CB ;
 align-items: center; /* Alignement horizontal au centre */
 margin-left: 5px;
 font-family:Arial, Helvetica, sans-serif;
+
 }
 
 
@@ -111,3 +112,16 @@ footer h5{
   align-items: center;
 }
 
+ .remove-link-style{
+ text-decoration: none;
+  color: $black-color;
+}
+
+
+ .remove-link-style:hover{
+  text-decoration: none;
+ box-shadow: 0 15px 25px $hover-color;
+ color: $primary-color;
+ background-color: $hover-color;
+ transition: color $primary-color  $transition-duration ease;
+ }

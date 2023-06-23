@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to pigeons_path(@booking.pigeon), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
