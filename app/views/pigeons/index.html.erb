@@ -24,11 +24,11 @@
               <span class="fa fa-star checked"></span>
             <% end %>
           </div>
-          <p>
+          <p> <strong>
             Couleur: <%= pigeon.color %><br />
             Description: <%= pigeon.descriptif %><br />
             Prix: <%= pigeon.price %> € / jour
-          </p>
+          </p></strong>
           <button class="btn" onclick="window.location.href='<%= pigeon_path(pigeon) %>'">voir <%= pigeon.name %> <i class="fa fa-arrow-right"></i></button>
         </div>
       </div>

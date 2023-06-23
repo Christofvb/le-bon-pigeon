@@ -5,7 +5,30 @@
 
     <div></div>
     <br>
-    <p>Loue le pigeon de t'es rêves ❤️.</p>
+
+     <h1 id="header">Loue le pigeon de tes rêves ! ! ! ❤️ ❤️ ❤️</h1>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var header = document.getElementById('header');
+    var text = header.innerText;
+    header.innerText = '';
+
+    var words = text.split(' ');
+    var index = 0;
+
+    function showText() {
+      if (index < words.length) {
+        header.innerHTML += words[index] + " ";
+        index++;
+        setTimeout(showText, 300); // Délai en millisecondes avant l'affichage du mot suivant
+      }
+    }
+
+    showText();
+  });
+</script>
+
     <div>
     <%= link_to "Découvrir nos pigeons", pigeons_path, class: "nav-link mt-4", style: "width: 250px;"%>
     </div>
