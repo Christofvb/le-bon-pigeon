@@ -1,5 +1,7 @@
 @import "home";
+@import "general";
 
+$light-gray: #F4F4F4;
 $primary-color: #fff;
 $border-radius: 5px;
 $black-color: #010004;
@@ -65,7 +67,7 @@ $transition-duration: 0,5s;
     .btn {
       color: $primary-color;
       background-color: $hover-color;
-      transition: color $primary-color  $transition-duration ease
+      transition: color $primary-color  $transition-duration ease;
     }
   }
 }
@@ -86,7 +88,8 @@ $transition-duration: 0,5s;
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 20px;
+
   }
 
   .container__text__timing {
