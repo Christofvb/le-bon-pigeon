@@ -27,7 +27,7 @@
                                 <p><%= booking.pigeon.price%>€</p>
                             </div>
                                 <div class="container__text__star">
-                                <p>Votre message envoyé<%= booking.content%></p>
+                                <p>Votre message envoyé : <%= booking.content%></p>
                             </div>
                             <%= link_to "Supprimer la reservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn"%>
 
